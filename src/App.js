@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loading, success } from "./store/actions/productsActions";
+import Loader from "./components/Loader";
+import Header from "./components/Header";
+import Products from "./components/Products";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Cart from "./components/Cart";
+import Detail from "./components/Detail";
+import PageNotFound from "./components/404";
+import Search from "./components/Search";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state);
+
+  useEffect(() => {
+    dispatch(loading());
+    fetch("http://localhost:5050/products")
+      .then((response) => response.json())
+      .then((products) => {
+        dispatch(success(products));
+      })
+      .catch((error) => console.error(error));
+  }, [dispatch]);
+
+  let components = <Loader />;
+  if (!data.loading) {
+    components = (
+      <>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Products} />
+          <Route path="/product/:id" component={Detail} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/search" component={Search} />
+          <Route path="*" component={PageNotFound} />
+        </Switch>
+      </>
+    );
+  }
+
+  return <Router>{components}</Router>;
 }
 
 export default App;

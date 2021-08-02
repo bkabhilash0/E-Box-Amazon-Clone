@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  border: 1rem solid transparent;
+  border-left: 1rem solid red;
+  border-right: 1rem solid red;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  animation: loader 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

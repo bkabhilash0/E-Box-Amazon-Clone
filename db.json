@@ -1,0 +1,59 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Oneplus 9R",
+      "price": 39000,
+      "brand": "Oneplus",
+      "prime": true,
+      "outOfStock": false,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61fy%2Bu9uqPL._SX679_.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Note 10",
+      "price": 59000,
+      "brand": "Samsung",
+      "prime": true,
+      "outOfStock": false,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71JJB8w5erL._SX679_.jpg"
+    },
+    {
+      "id": 3,
+      "name": "POCO X1",
+      "price": 24999,
+      "brand": "POCO",
+      "prime": false,
+      "outOfStock": true,
+      "image": "https://static.toiimg.com/photo/65517869/Xiaomi-Poco-F1-128GB.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Redmi Note",
+      "price": 11999,
+      "brand": "Redmi",
+      "prime": false,
+      "outOfStock": true,
+      "image": "https://i01.appmifile.com/webfile/globalimg/in/cms/82E02A4B-C7C8-FD69-A2C7-8E135C1CE017.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Oneplus Nord 2",
+      "price": 32000,
+      "brand": "Oneplus",
+      "prime": true,
+      "outOfStock": true,
+      "image": "https://www.xda-developers.com/files/2021/07/OnePlus-Nord-2_6.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Vivo V1",
+      "price": 6999,
+      "brand": "Vivo",
+      "prime": false,
+      "outOfStock": false,
+      "image": "https://i.gadgets360cdn.com/products/large/vivo-y51-db-722x800-1606992569.jpg"
+    }
+  ],
+  "orders": []
+}
