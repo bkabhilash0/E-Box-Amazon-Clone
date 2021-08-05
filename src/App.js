@@ -11,7 +11,7 @@ import Detail from "./components/Detail";
 import PageNotFound from "./components/404";
 import Search from "./components/Search";
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state);
 
